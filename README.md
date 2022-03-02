@@ -30,8 +30,8 @@ Reference Sources:
 
 ### setup:
 ```
-  mkdir EnvVarDemo
-  cd EnvVarDemo
+  mkdir TwilioEnvVarDemo
+  cd TwilioEnvVarDemo
   npm init
   npm i dotenv
   npm i twilio
