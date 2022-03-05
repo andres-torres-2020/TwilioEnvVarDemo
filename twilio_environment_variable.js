@@ -13,10 +13,10 @@ class twilio_environment_variable
             .variables
             .create({key: key, value: value})
             .then(variable => {
-                console.log(variable.sid);
+                console.log(`VAR: ${variable.sid} ${variable}`);
                 this.variableSid = variable.sid;
+                return variable;
             });
-        return this.variableSid;
     }
     async read(environmentSid)
     {
@@ -32,7 +32,7 @@ class twilio_environment_variable
                 }));
         return varList;
     }
-    async update(environmentSid, variableSid, key, value)
+    async update(environmentSid, variableSid, value)
     {
         await this.client.serverless.services(this.serviceSid)
             .environments(environmentSid)
